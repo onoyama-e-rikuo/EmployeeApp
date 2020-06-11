@@ -28,7 +28,7 @@ public class EmployeeController {
 	String searchById(@PathVariable int id, Model model) {
 		Employee employee = employeeService.findById(id);
 		model.addAttribute("employeeDetails",employee);
-		return "employee/detail";
+		return "details";
 	}
 	
 	
