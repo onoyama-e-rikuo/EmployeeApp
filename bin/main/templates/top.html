@@ -1,49 +1,11 @@
 <!DOCTYPE html>
-<html lang="ja" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<link rel="stylesheet" href="css/top.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Employee System</title>
-</head>
-<body>
-	<nav>
-		<div class="nav-wrapper">
-			<a href="/" class="brand-logo center">従業員管理</a>
-		</div>
-	</nav>
-	<div class="row">
-		<div class="sidebar col s2">
-			<table class="centered highlight">
-				<tbody>
-					<tr>
-						<td><a href="#">総務部</a></td>
-					</tr>
-					<tr>
-						<td><a href="#">人事部</a></td>
-					</tr>
-					<tr>
-						<td><a href="#">経理部</a></td>
-					</tr>
-					<tr>
-						<td><a href="#">マーケティング部</a></td>
-					</tr>
-					<tr>
-						<td><a href="#">広報部</a></td>
-					</tr>
-					<tr>
-						<td><a href="#">営業部</a></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="contents col s6 offset-s2">
-			<table class="centered">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/layout">
+
+	<div layout:fragment="content">
+        <table class="centered">
 				<thead>
 					<tr>
 						<th>名前</th>
@@ -58,23 +20,5 @@
 								class="material-icons">person_search</i></a></td>
 					</tr>
 			</table>
-			<a class="btn-floating btn-large waves-effect waves-light red"><i
-				class="material-icons">person_add</i></a>
-
-			<ul class="pagination">
-				<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-				<li class="active"><a href="#!">1</a></li>
-				<li class="waves-effect"><a href="#!">2</a></li>
-				<li class="waves-effect"><a href="#!">3</a></li>
-				<li class="waves-effect"><a href="#!">4</a></li>
-				<li class="waves-effect"><a href="#!">5</a></li>
-				<li class="waves-effect"><a href="#!"><i
-						class="material-icons">chevron_right</i></a></li>
-			</ul>
-
-		</div>
-	</div>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</body>
+    </div>
 </html>
