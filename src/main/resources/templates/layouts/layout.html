@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
-	layout:decorate="~{layouts/layout}">
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="css/top.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Employee System</title>
 </head>
 <body>
@@ -38,13 +44,11 @@
 			</table>
 		</div>
 		<div class="contents col s6 offset-s2">
-			<div th:object="${employeeDetails}">
-				<p class="col s4">[[${employeeDetails.lastName}]] [[${employeeDetails.firstName}]]</p>
-				<p class="col s8">[[${employeeDetails.lastName}]] [[${employeeDetails.firstName}]]</p>
-				<p class="col s4">[[${employeeDetails.lastName}]] [[${employeeDetails.firstName}]]</p>
-				<p class="col s8">[[${employeeDetails.lastName}]] [[${employeeDetails.firstName}]]</p>
-			</div>
+		<div layout:fragment="contents">
 		</div>
 	</div>
+	</div>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
