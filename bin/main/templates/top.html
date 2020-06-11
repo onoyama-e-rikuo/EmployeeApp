@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -12,40 +12,47 @@
 <title>Employee System</title>
 </head>
 <body>
-	  <div class="container">
-              <table>
-        <thead>
-          <tr>
-              <th>Name</th>
-              <th>Item Name</th>
-              <th>Item Price</th>
-          </tr>
-        </thead>
 
-        <tbody>
-          <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-          </tr>
-        </tbody>
-      </table>
+	   <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Logo</a>
+    </div>
+  </nav>
 
-         <a class="btn-floating btn-large waves-effect waves-light "><i class="material-icons">person_add</i></a>
+    <!-- Page Layout here -->
+    <div class="row">
 
+      <div class="col s4">
+        ああ
       </div>
 
-	
-<script　src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <div class="col s8">
+
+
+		<table>
+			<thead>
+				<tr>
+					<th>名前</th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody th:inline="text" th:each="employee : ${employeeList}"
+				th:object="${employee}">
+				<tr>
+					<td>[[${employee.lastName}]] [[${employee.firstName}]]</td>
+					<td><a th:href="@{/employee/{id}(id=*{id})}"><i class="material-icons">person_search</i></a></td>
+				</tr>
+		</table>
+
+		<a class="btn-floating btn-large waves-effect waves-light "><i
+			class="material-icons">person_add</i></a>
+	</div>
+	</div>
+
+
+
+	<script
+		　src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
