@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import app.dto.EmployeeRequest;
 import app.dto.EmployeeUpdateRequest;
 import app.entity.Employee;
 import app.repository.EmployeeRepository;
@@ -45,18 +46,19 @@ public class EmployeeService {
 		employeeRepository.deleteById(id);	
 	}
 	
-	public void create(EmployeeUpdateRequest employeeUpdateRequest) {
-		Employee employee = findById(employeeUpdateRequest.getId());
+	public void create(EmployeeRequest employeeRequest) {
+		Employee employee = new Employee();
 		
-		employee.setLastName(employeeUpdateRequest.getLastName());
-		employee.setFirstName(employeeUpdateRequest.getFirstName());
-		employee.setKanaLastName(employeeUpdateRequest.getKanaLastName());
-		employee.setKanaFirstName(employeeUpdateRequest.getKanaFirstName());
-		employee.setAge(employeeUpdateRequest.getAge());
-		employee.setPhone(employeeUpdateRequest.getPhone());
-		employee.setEmail(employeeUpdateRequest.getEmail());
+		employee.setLastName(employeeRequest.getLastName());
+		employee.setFirstName(employeeRequest.getFirstName());
+		employee.setKanaLastName(employeeRequest.getKanaLastName());
+		employee.setKanaFirstName(employeeRequest.getKanaFirstName());
+		employee.setAge(employeeRequest.getAge());
+		employee.setPhone(employeeRequest.getPhone());
+		employee.setEmail(employeeRequest.getEmail());
 		employee.setCreateDate(new Date());
 		employee.setUpdateDate(new Date());
 		employeeRepository.save(employee);
 	}
+	
 }
