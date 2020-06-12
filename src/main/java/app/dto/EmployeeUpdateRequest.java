@@ -5,7 +5,7 @@ import java.util.Date;
 
 import javax.validation.constraints.NotBlank;
 
-public class EmployeeRequest implements Serializable {
+public class EmployeeUpdateRequest implements Serializable {
 
 	private static final long serialVersionUID = 5303646281771996452L;
 
