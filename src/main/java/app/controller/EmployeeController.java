@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import app.dto.EmployeeRequest;
 import app.dto.EmployeeUpdateRequest;
 import app.entity.Employee;
 import app.service.EmployeeService;
@@ -73,6 +74,29 @@ public class EmployeeController {
 	@GetMapping("/employee/{id}/delete")
 	String delete(@PathVariable int id) {
 		employeeService.deleteById(id);
+		return "redirect:/";
+	}
+	
+	@GetMapping("/create")
+	  public String displayCreate(Model model) {
+	    model.addAttribute("employeeRequest", new EmployeeRequest());
+	    return "create";
+	  }
+	
+	
+	@PostMapping("/employee/create")
+	String create(@Validated @ModelAttribute EmployeeUpdateRequest employeeUpdateRequest, BindingResult result, Model model) {
+		if(result.hasErrors()) {
+			List<String> errorList = new ArrayList<String>();
+			for (ObjectError error : result.getAllErrors()) {
+				errorList.add(error.getDefaultMessage());
+			}
+			
+			model.addAttribute("validationError", errorList);
+			return "edit";
+		}
+		
+		employeeService.create(employeeUpdateRequest);
 		return "redirect:/";
 	}
 }
