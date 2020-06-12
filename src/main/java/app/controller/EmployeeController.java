@@ -37,6 +37,21 @@ public class EmployeeController {
 		model.addAttribute("employeeDetails",employee);
 		return "details";
 	}
+	
+    @GetMapping("/user/{id}/edit")
+    public String edit(@PathVariable int id, Model model) {
+        	Employee employee = employeeService.findById(id);
+        	EmployeeUpdateRequest employeeUpdateRequest = new EmployeeUpdateRequest();
+        	employeeUpdateRequest.setLastName(employee.getLastName());
+        	employeeUpdateRequest.setFirstName(employee.getFirstName());
+        	employeeUpdateRequest.setKanaLastName(employee.getKanaLastName());
+        	employeeUpdateRequest.setKanaFirstName(employee.getKanaFirstName());
+        	employeeUpdateRequest.setAge(employee.getAge());
+        	employeeUpdateRequest.setPhone(employee.getPhone());
+        	employeeUpdateRequest.setEmail(employee.getEmail());
+        	model.addAttribute("employeeUpdateRequest", employeeUpdateRequest);
+        	return"edit";
+    }
 
 	@PostMapping("/employee/update")
 	String update(@Validated @ModelAttribute EmployeeUpdateRequest employeeUpdateRequest, BindingResult result, Model model) {
@@ -47,7 +62,7 @@ public class EmployeeController {
 			}
 			
 			model.addAttribute("validationError", errorList);
-			return "employee/edit";
+			return "edit";
 		}
 		
 		employeeService.update(employeeUpdateRequest);
