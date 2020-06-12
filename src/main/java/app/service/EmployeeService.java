@@ -40,4 +40,9 @@ public class EmployeeService {
 		employee.setUpdateDate(new Date());
 		employeeRepository.save(employee);
 	}
+	
+	public void deleteById(int id) {
+		employeeRepository.deleteById(id);
+		
+	}
 }
