@@ -5,6 +5,9 @@ import java.util.Date;
 
 import javax.validation.constraints.NotBlank;
 
+import lombok.Data;
+
+@Data
 public class EmployeeUpdateRequest implements Serializable {
 
 	private static final long serialVersionUID = 5303646281771996452L;
