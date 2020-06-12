@@ -85,7 +85,7 @@ public class EmployeeController {
 	
 	
 	@PostMapping("/employee/create")
-	String create(@Validated @ModelAttribute EmployeeUpdateRequest employeeUpdateRequest, BindingResult result, Model model) {
+	String create(@Validated @ModelAttribute EmployeeRequest employeeRequest, BindingResult result, Model model) {
 		if(result.hasErrors()) {
 			List<String> errorList = new ArrayList<String>();
 			for (ObjectError error : result.getAllErrors()) {
@@ -96,7 +96,7 @@ public class EmployeeController {
 			return "edit";
 		}
 		
-		employeeService.create(employeeUpdateRequest);
+		employeeService.create(employeeRequest);
 		return "redirect:/";
 	}
 }
