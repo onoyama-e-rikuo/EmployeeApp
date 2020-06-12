@@ -2,13 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layout/layout">
-<div layout:fragment="content">
-			<div th:object="${employeeDetails}">
-				<p class="col s4">[[${employeeDetails.lastName}]] [[${employeeDetails.firstName}]]</p>
-				<p class="col s8">[[${employeeDetails.lastName}]] [[${employeeDetails.firstName}]]</p>
-				<p class="col s4">[[${employeeDetails.lastName}]] [[${employeeDetails.firstName}]]</p>
-				<p class="col s8">[[${employeeDetails.lastName}]] [[${employeeDetails.firstName}]]</p>
-			</div>
+      layout:decorator="layout/details_layout">
+
+    <th:block layout:fragment="css">
+        <link rel="stylesheet" th:href="@{/css/detail.css}" >
+    </th:block>
+<div layout:fragment="content" th:object="${employeeDetails}">
+	<div class="details">
+	<i class="material-icons large offset-s4 col s8">person</i>
+		<p class="col s2 offset-s2">氏名</p>
+		<p class="col s8">[[${employeeDetails.lastName}]] [[${employeeDetails.firstName}]]</p>
+		<p class="col s2 offset-s2">カナ</p>
+		<p class="col s8">[[${employeeDetails.kanaLastName}]] [[${employeeDetails.kanaFirstName}]]</p>
+		<p class="col s2 offset-s2">年齢</p>
+		<p class="col s8">[[${employeeDetails.age}]] 歳</p>
+		<p class="col s2 offset-s2">電話番号</p>
+		<p class="col s8" th:text="*{phone}"></p>
+		<p class="col s2 offset-s2">メールアドレス</p>
+		<p class="col s8" th:text="*{email}"></p>
+		<a class="waves-effect waves-light btn b1" href="#">編集</a>
+		<a class="waves-effect waves-light btn b2" href="#">削除</a>
+		
+	</div>
 </div>
 </html>

@@ -1,20 +1,14 @@
 @charset "UTF-8";
 
 body {
-	min-height: 100vh;
+	max-height: 100vh;
 }
 
-.row {
-	height: 90%;
-}
-
-.col {
-	height: 90vh;	
-}
 
 .sidebar {
 	border-right: solid 0.5px #E0E0E0;
 	padding-top: 20px;
+	height: 93vh;
 }
 
 .sidebar table{
@@ -37,6 +31,6 @@ a {
 }	
 
  .pagination {
- 	margin-left: 100px ;
+ 	margin-left: 160px ;
  }
  

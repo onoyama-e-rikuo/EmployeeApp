@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layout/layout">
+      layout:decorator="layout/details_layout">
 
 	<div layout:fragment="content">
         <table class="centered">
@@ -20,5 +20,18 @@
 								class="material-icons">person_search</i></a></td>
 					</tr>
 			</table>
+						<a class="btn-floating btn-large waves-effect waves-light red"><i
+				class="material-icons">add</i></a>
+
+			<ul class="pagination">
+				<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+				<li class="active"><a href="#!">1</a></li>
+				<li class="waves-effect"><a href="#!">2</a></li>
+				<li class="waves-effect"><a href="#!">3</a></li>
+				<li class="waves-effect"><a href="#!">4</a></li>
+				<li class="waves-effect"><a href="#!">5</a></li>
+				<li class="waves-effect"><a href="#!"><i
+				class="material-icons">chevron_right</i></a></li>
+			</ul>
     </div>
 </html>
