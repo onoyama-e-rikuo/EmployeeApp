@@ -42,7 +42,21 @@ public class EmployeeService {
 	}
 	
 	public void deleteById(int id) {
-		employeeRepository.deleteById(id);
+		employeeRepository.deleteById(id);	
+	}
+	
+	public void create(EmployeeUpdateRequest employeeUpdateRequest) {
+		Employee employee = findById(employeeUpdateRequest.getId());
 		
+		employee.setLastName(employeeUpdateRequest.getLastName());
+		employee.setFirstName(employeeUpdateRequest.getFirstName());
+		employee.setKanaLastName(employeeUpdateRequest.getKanaLastName());
+		employee.setKanaFirstName(employeeUpdateRequest.getKanaFirstName());
+		employee.setAge(employeeUpdateRequest.getAge());
+		employee.setPhone(employeeUpdateRequest.getPhone());
+		employee.setEmail(employeeUpdateRequest.getEmail());
+		employee.setCreateDate(new Date());
+		employee.setUpdateDate(new Date());
+		employeeRepository.save(employee);
 	}
 }
