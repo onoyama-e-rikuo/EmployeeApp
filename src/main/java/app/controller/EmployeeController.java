@@ -42,6 +42,7 @@ public class EmployeeController {
     public String edit(@PathVariable int id, Model model) {
         	Employee employee = employeeService.findById(id);
         	EmployeeUpdateRequest employeeUpdateRequest = new EmployeeUpdateRequest();
+        	employeeUpdateRequest.setId(employee.getId());
         	employeeUpdateRequest.setLastName(employee.getLastName());
         	employeeUpdateRequest.setFirstName(employee.getFirstName());
         	employeeUpdateRequest.setKanaLastName(employee.getKanaLastName());

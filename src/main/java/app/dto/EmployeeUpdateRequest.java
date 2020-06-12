@@ -1,7 +1,6 @@
 package app.dto;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -12,7 +11,6 @@ public class EmployeeUpdateRequest implements Serializable {
 
 	private static final long serialVersionUID = 5303646281771996452L;
 
-	@NotEmpty
 	private int id;
 	
 	@NotEmpty
@@ -35,13 +33,4 @@ public class EmployeeUpdateRequest implements Serializable {
 	
 	@NotEmpty
 	private String email;
-
-	@NotEmpty
-	private Date createDate;
-	
-	@NotEmpty
-	private Date updateDate;
-	
-	@NotEmpty
-	private Date deleteDate;
 }
