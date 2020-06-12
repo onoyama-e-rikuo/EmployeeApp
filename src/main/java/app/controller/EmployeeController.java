@@ -38,7 +38,7 @@ public class EmployeeController {
 		return "details";
 	}
 	
-    @GetMapping("/user/{id}/edit")
+    @GetMapping("/employee/{id}/edit")
     public String edit(@PathVariable int id, Model model) {
         	Employee employee = employeeService.findById(id);
         	EmployeeUpdateRequest employeeUpdateRequest = new EmployeeUpdateRequest();

@@ -20,8 +20,8 @@
 		<p class="col s8" th:text="*{phone}"></p>
 		<p class="col s2 offset-s2">メールアドレス</p>
 		<p class="col s8" th:text="*{email}"></p>
-		<a class="waves-effect waves-light btn b1" th:href="@{/employee/{id}(id=*{id})}">編集</a>
-		<a class="waves-effect waves-light btn b2" th:href="@{/employee/{id}(id=*{id})}">削除</a>
+		<a class="waves-effect waves-light btn b1" th:href="@{/employee/{id}/edit(id=*{id})}">編集</a>
+		<a class="waves-effect waves-light btn b2" th:href="@{/employee/{id}/delete(id=*{id})}">削除</a>
 		
 	</div>
 </div>

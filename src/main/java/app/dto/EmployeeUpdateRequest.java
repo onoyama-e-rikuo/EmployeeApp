@@ -3,7 +3,7 @@ package app.dto;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.Data;
 
@@ -12,36 +12,36 @@ public class EmployeeUpdateRequest implements Serializable {
 
 	private static final long serialVersionUID = 5303646281771996452L;
 
-	@NotBlank
+	@NotEmpty
 	private int id;
 	
-	@NotBlank
+	@NotEmpty
 	private String lastName;
 	
-	@NotBlank
+	@NotEmpty
 	private String firstName;
 	
-	@NotBlank
+	@NotEmpty
 	private String kanaLastName;
 	
-	@NotBlank
+	@NotEmpty
 	private String kanaFirstName;
 	
-	@NotBlank
+	@NotEmpty
 	private String age;
 	
-	@NotBlank
+	@NotEmpty
 	private String phone;
 	
-	@NotBlank
+	@NotEmpty
 	private String email;
 
-	@NotBlank
+	@NotEmpty
 	private Date createDate;
 	
-	@NotBlank
+	@NotEmpty
 	private Date updateDate;
 	
-	@NotBlank
+	@NotEmpty
 	private Date deleteDate;
 }
