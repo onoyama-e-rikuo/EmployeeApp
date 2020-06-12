@@ -29,7 +29,7 @@ public class EmployeeService {
 		
 		employee.setLastName(employeeUpdateRequest.getLastName());
 		employee.setFirstName(employeeUpdateRequest.getFirstName());
-		employee.setKanaLastName(employeeUpdateRequest.getLastName());
+		employee.setKanaLastName(employeeUpdateRequest.getKanaLastName());
 		employee.setKanaFirstName(employeeUpdateRequest.getKanaFirstName());
 		employee.setAge(employeeUpdateRequest.getAge());
 		employee.setPhone(employeeUpdateRequest.getPhone());
