@@ -25,14 +25,14 @@ public class EmployeeController {
 	EmployeeService employeeService;
 	
 	@GetMapping("/")
-	String top(Model model) {
+	String displayTop(Model model) {
 		List<Employee> employeeList = employeeService.findAll();
 		model.addAttribute("employeeList",employeeList);
 		return "top";
 	}
 	
 	@GetMapping("/employee/{id}")
-	String searchById(@PathVariable int id, Model model) {
+	String displayDetails(@PathVariable int id, Model model) {
 		Employee employee = employeeService.findById(id);
 		model.addAttribute("employeeDetails",employee);
 		return "details";
@@ -68,5 +68,11 @@ public class EmployeeController {
 		
 		employeeService.update(employeeUpdateRequest);
 		return String.format("redirect:/employee/%d", employeeUpdateRequest.getId());
+	}
+	
+	@GetMapping("/employee/{id}/delete")
+	String delete(@PathVariable int id) {
+		employeeService.deleteById(id);
+		return "redirect:/";
 	}
 }
