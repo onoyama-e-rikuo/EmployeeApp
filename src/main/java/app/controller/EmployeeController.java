@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import app.dto.EmployeeForm;
 import app.dto.EmployeeRequest;
 import app.dto.EmployeeUpdateRequest;
 import app.entity.Employee;
@@ -28,6 +29,7 @@ public class EmployeeController {
 	@GetMapping("/")
 	String displayTop(Model model) {
 		List<Employee> employeeList = employeeService.findAll();
+		model.addAttribute("employeeForm",new EmployeeForm());
 		model.addAttribute("employeeList",employeeList);
 		return "top";
 	}
@@ -99,4 +101,12 @@ public class EmployeeController {
 		employeeService.create(employeeRequest);
 		return "redirect:/";
 	}
+	
+	@PostMapping("/employee/search")
+	String search(@ModelAttribute EmployeeForm employeeForm, Model model) {
+		List<Employee> searchResults = employeeService.searchByEmployeeLastName(employeeForm.getLastName());
+		model.addAttribute("searchResults", searchResults);
+		return "show";
+	}
+	
 }
