@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/details_layout">
+
+	<div layout:fragment="content">
+		<div th:each="searchResult : ${searchResults}">
+			<p th:text="${searchResult.lastName}"><p>
+		</div>
+    </div>
+</html>
