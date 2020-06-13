@@ -61,4 +61,7 @@ public class EmployeeService {
 		employeeRepository.save(employee);
 	}
 	
+	public List<Employee> searchByEmployeeLastName(String lastName) {
+		return employeeRepository.findByLastName(lastName);
+	}
 }
