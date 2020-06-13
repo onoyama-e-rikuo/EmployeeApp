@@ -5,9 +5,20 @@
       layout:decorator="layout/details_layout">
 
 	<div layout:fragment="content">
-		<div th:each="searchResult : ${searchResults}">
-			<p th:text="${searchResult.lastName}"><p>
-			<p th:text="${searchResult.firstName}"><p>
-		</div>
+		    <table class="centered">
+				<thead>
+					<tr>
+						<th>名前</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody th:inline="text" th:each="searchResult : ${searchResults}"
+					th:object="${searchResult}">
+					<tr>
+						<td>[[${searchResult.lastName}]] [[${searchResult.firstName}]]</td>
+						<td><a th:href="@{/employee/{id}(id=*{id})}"><i
+								class="material-icons">person_search</i></a></td>
+					</tr>
+			</table>
     </div>
 </html>
