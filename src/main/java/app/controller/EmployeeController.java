@@ -106,7 +106,7 @@ public class EmployeeController {
 	String search(@ModelAttribute EmployeeForm employeeForm, Model model) {
 		List<Employee> searchResults = employeeService.searchByEmployeeLastName(employeeForm.getLastName());
 		model.addAttribute("searchResults", searchResults);
-		return "show";
+		return "search_result";
 	}
 	
 }
