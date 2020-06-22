@@ -109,4 +109,8 @@ public class EmployeeController {
 		return "search_result";
 	}
 	
+	@GetMapping("/helloworld")
+	String helloWorld() {
+		return "Hello World";
+	}
 }
